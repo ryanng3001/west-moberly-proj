@@ -10,4 +10,5 @@
 - [ ] What to do w/ a number of libraries that are retiring Oct 2023?
 - [ ] occ_issues (under rgbif) is deprecated - any alternatives?
 - [ ] Make a table for plant species, # initial, # after cleaning, time, ...
-- [ ] (for the future) Code that allows cleaning for multiple species? 
+- [ ] (for the future) Code that allows cleaning for multiple species?
+- [ ] Explore eddmaps as an extra data source! 
