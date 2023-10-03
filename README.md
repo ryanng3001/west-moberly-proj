@@ -1,9 +1,11 @@
 # Worklist and Updates 
 
 ## My worklist 
+- [ ] changed the cc_xxx() portion - why is it taking so long + my computer under so much pressure???
 - [ ] occ_issues (under rgbif) is deprecated - any alternatives?
 - [ ] (for the future) Code that allows cleaning for multiple species?
 - [ ] Explore eddmaps as an extra data source!
+
 
 ## Current progress (as of 2/10)
 - Obtained maps and histograms for 5 plant species in brainstorming doc 
