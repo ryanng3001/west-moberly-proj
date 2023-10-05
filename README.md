@@ -5,7 +5,10 @@
 - [ ] (for the future) Code that allows cleaning for multiple species?
 - [ ] Explore eddmaps as an extra data source!
 
-Goal: reduce runtime 
+## Current progress (as of 4/10)
+- Finalized cleaning script - now work on extracting data and creating plots 
+- Should redo the original 5 species... since we are now using a new script 
+- Goal: reduce runtime!!! 
 
 | Test (E. con) | Time          | Output|
 | ------------- |:-------------:| -----:|
@@ -17,9 +20,7 @@ Goal: reduce runtime
 | remove cc_dupl| 1:55| 395|
 | original cc_ functions| 1:37| 389|
 
->> original script test = 2.30 *2020 ;118
->> new script = 1.50 (good!)         ;388
->> original script test = 4.45       ;389
+Result: Commit to the species_search merge; everything else the same. Coordinate_clean seems to be slower; cannot remove cc_dupl because some records were removed by it. Overall reduced run time by half! 
 
 ## Current progress (as of 2/10)
 - Obtained maps and histograms for 5 plant species in brainstorming doc 
