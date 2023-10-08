@@ -20,7 +20,7 @@ library(devtools)
 library(sf)
 
 ### STEP 01: download data from GBIF ###
-myspecies <- c("Cornus sericea") # specify species here !!!
+myspecies <- c("Viola canadensis") # specify species here !!!
 species_search <- occ_search(scientificName = myspecies, 
                              hasCoordinate = TRUE, 
                              year = "1980,2023",
@@ -73,22 +73,19 @@ species_data$countryCode <-  countrycode(species_data$countryCode,
                                          origin =  'iso2c', 
                                          destination = 'iso3c') 
 
-# ## STEP 7: identify and remove flagged records ###
-# species_data_clean <- species_data%>%
-#   cc_val()%>% # invalid lat/lon coordinates
-#   cc_equ()%>% # identical lat/lon
-#   cc_cap()%>% # coordinates in vicinity of country capitals
-#   cc_cen()%>% # coordinates in vicinity of country or province centroids
-#   cc_coun(iso3 = "countryCode")%>% # coordinates outside reported country
-#   cc_gbif()%>% # coordinates assigned to GBIF headquarters
-#   cc_inst()%>% # coordinates in the vicinity of biodiversity institutions
-#   cc_zero()%>% # coordinates that are zero
-#   cc_sea()%>% # coordinates at sea
-#   cc_outl()%>% # outliers
-#   cc_dupl() # duplicate species
-
+## STEP 7: identify and remove flagged records ###
 species_data_clean <- species_data%>%
-  cc_dupl()
+  cc_val()%>% # invalid lat/lon coordinates
+  cc_equ()%>% # identical lat/lon
+  cc_cap()%>% # coordinates in vicinity of country capitals
+  cc_cen()%>% # coordinates in vicinity of country or province centroids
+  cc_coun(iso3 = "countryCode")%>% # coordinates outside reported country
+  cc_gbif()%>% # coordinates assigned to GBIF headquarters
+  cc_inst()%>% # coordinates in the vicinity of biodiversity institutions
+  cc_zero()%>% # coordinates that are zero
+  cc_sea()%>% # coordinates at sea
+  cc_outl()%>% # outliers
+  cc_dupl() # duplicate species
 
 ### STEP 8: coordinate uncertainty <1000m ###
 nrow(species_data_clean) # shows the number of records left
@@ -96,7 +93,7 @@ nrow(species_data_clean) # shows the number of records left
 ### STEP 9A: Histogram ### 
 hist(species_data_clean$year, breaks = 50, 
      ylab="Frequency", xlab="Year", 
-     main=substitute(paste(italic("Cornus sericea")," observations by year")),
+     main=substitute(paste(italic("Viola canadensis")," observations by year")),
      xlim=c(1980, 2023))
 
 ### STEP 9B: Map ###  
@@ -111,4 +108,4 @@ ggplot()+ coord_fixed()+ wm +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5, face="italic"))
 
-write.csv(species_data_clean, "C:\\Users\\ryann\\Downloads\\west-moberly-proj\\cleaned-data\\cornus-sericea-data.csv", row.names=FALSE)
+write.csv(species_data_clean, "C:\\Users\\ryann\\Downloads\\west-moberly-proj\\cleaned-data\\viola-canadensis-data.csv", row.names=FALSE)

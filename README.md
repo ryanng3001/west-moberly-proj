@@ -5,6 +5,11 @@
 - [ ] (for the future) Code that allows cleaning for multiple species?
 - [ ] Explore eddmaps as an extra data source!
 
+## Curernt progress (as of 8/10)
+- cc_inst is slow because it filters species obs based on a record of 10,000+ biological instutitions 
+- # filtered is actually quite insignificant 
+- propose to remove this line for large datasets (>10000)
+
 ## Current progress (as of 4/10)
 - Finalized cleaning script - now work on extracting data and creating plots 
 - Should redo the original 5 species... since we are now using a new script 
