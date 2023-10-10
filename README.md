@@ -5,6 +5,19 @@
 - [ ] (for the future) Code that allows cleaning for multiple species?
 - [ ] Explore eddmaps as an extra data source!
 
+## Current progress (as of 9/10)
+- Managed to work through 14 species 
+- For some reason for large datasets, cc_outl is not working... 
+Testing geographic outliers
+Error in h(simpleError(msg, call)) : 
+  error in evaluating the argument 'x' in selecting a method for function 'ext': [vect] the variable name(s) in argument `geom` are not in `x`
+In addition: Warning message:
+In cc_outl(species_data) : Using raster approximation.
+- Think issue relates to size of df; 9999 ok but 10000 fail 
+- https://github.com/ropensci/CoordinateCleaner/issues/21 
+- Will just remove cc_outl if >10000
+
+
 ## Curernt progress (as of 8/10)
 - cc_inst is slow because it filters species obs based on a record of 10,000+ biological instutitions 
 - # filtered is actually quite insignificant 
