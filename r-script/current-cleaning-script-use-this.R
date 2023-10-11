@@ -20,7 +20,7 @@ library(devtools)
 library(sf)
 
 ### STEP 01: download data from GBIF ###
-myspecies <- c("Populus tremuloides") # specify species here !!!
+myspecies <- c("Cornus canadensis") # specify species here !!!
 species_search <- occ_data(scientificName = myspecies, 
                              hasCoordinate = TRUE, 
                              year = "1980,2023",
@@ -80,7 +80,7 @@ species_data_clean <- species_data%>%
   cc_cen()%>% # coordinates in vicinity of country or province centroids
   cc_coun(iso3 = "countryCode")%>% # coordinates outside reported country
   cc_gbif()%>% # coordinates assigned to GBIF headquarters
-  #cc_inst()%>% # coordinates in the vicinity of biodiversity institutions
+  # cc_inst()%>% # coordinates in the vicinity of biodiversity institutions
   cc_zero()%>% # coordinates that are zero
   cc_sea()%>% # coordinates at sea
   #cc_outl()%>% # outliers
@@ -92,7 +92,7 @@ nrow(species_data_clean) # shows the number of records left
 ### STEP 9A: Histogram ### 
 hist(species_data_clean$year, breaks = 50, 
      ylab="Frequency", xlab="Year", 
-     main=substitute(paste(italic("Populus tremuloides")," observations by year")),
+     main=substitute(paste(italic("Cornus canadensis")," observations by year")),
      xlim=c(1980, 2023))
 
 ### STEP 9B: Map ###  
@@ -107,4 +107,4 @@ ggplot()+ coord_fixed()+ wm +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5, face="italic"))
 
-write.csv(species_data_clean, "C:\\Users\\ryann\\Downloads\\west-moberly-proj\\cleaned-data\\populus-tremuloides-data.csv", row.names=FALSE)
+write.csv(species_data_clean, "C:\\Users\\ryann\\Downloads\\west-moberly-proj\\cleaned-data\\cornus-canadensis-data.csv", row.names=FALSE)
