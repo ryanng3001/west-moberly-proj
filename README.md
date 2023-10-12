@@ -1,6 +1,12 @@
 # Worklist and Updates 
 
 ## My worklist 
+- [ ] Check occurrence for data till 2020
+- [ ] Think about classifications - native vs. introduced
+- [ ] For non-native species, how many in North America?
+- [ ] Any interesting comparisons?
+      
+Not so important 
 - [ ] occ_issues (under rgbif) is deprecated - any alternatives?
 - [ ] (for the future) Code that allows cleaning for multiple species?
 - [ ] Explore eddmaps as an extra data source!
