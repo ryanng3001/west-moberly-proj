@@ -20,7 +20,7 @@ library(devtools)
 library(sf)
 
 ### STEP 01: download data from GBIF ###
-myspecies <- c("Cornus sericea") # specify species here !!!
+myspecies <- c("Achillea millefolium") # specify species here !!!
 species_search <- occ_data(scientificName = myspecies, 
                              hasCoordinate = TRUE, 
                              year = "1980,2022",
@@ -92,7 +92,7 @@ nrow(species_data_clean) # shows the number of records left
 ### STEP 9A: Histogram ### 
 hist(species_data_clean$year, breaks = 50, 
      ylab="Frequency", xlab="Year", 
-     main=substitute(paste(italic("Cornus sericea")," observations by year")),
+     main=substitute(paste(italic("Achillea millefolium")," observations by year")),
      xlim=c(1980, 2023))
 
 ### STEP 9B: Map ###  
@@ -107,7 +107,7 @@ ggplot()+ coord_fixed()+ wm +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5, face="italic"))
 
-write.csv(species_data_clean, "C:\\Users\\ryann\\Downloads\\west-moberly-proj\\cleaned-data\\cornus-sericea-data.csv", row.names=FALSE)
+write.csv(species_data_clean, "C:\\Users\\ryann\\Downloads\\west-moberly-proj\\cleaned-data\\achillea-millefolium-data.csv", row.names=FALSE)
 
 ################################
 sp_data_2020 <- filter(species_data_clean, year <= 2020)
